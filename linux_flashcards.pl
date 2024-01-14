@@ -4,11 +4,10 @@ use v5.28;
 use strict;
 use warnings;
 
-open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 chomp (my @indexDOC = <INDEX>);
 my %index = @indexDOC;
 my @terms = sort (keys %index);
-my $mainloop = 'true';
 
 printf "%43s\n", "***INDEX FLASHCARDS***";
 say "*Enter the term associated with the prompt. Enter q/quit to quit*";
@@ -20,7 +19,6 @@ sub game{
 	my @hints = split //, $_[1];
 	my $hintCount = $_[2]; 
 	
-	
 	until ($answer eq $_[1]){
 		
 		print "Answer: ";
@@ -31,12 +29,12 @@ sub game{
 		}elsif ($answer =~ /\Ah(elp|int)*\Z/i){
 			if ($hintCount > $#hints){
 				say "Sorry, you asked for too many hints!";
-				}else{
+			}else{
 				print "You asked for a hint! - ";
 				foreach my $i (0..$hintCount){
 					print "$hints[$i]";
 				}
-				$hintCount ++
+				$hintCount ++;
 				print "\n";
 			}
 			
