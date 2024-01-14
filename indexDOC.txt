@@ -1,0 +1,50 @@
+cd
+change directory, '~' is home, '/' is root, '..' is back one
+ls
+list contents of directory, '-l' is longform, '-a' is show hidden files
+cat
+concatenate, display content of files, can be used with multiple files, '-A' to show all chars
+touch
+create new empty files, can also be used to update file timestamps
+file
+short description of a files type/contents
+less
+displays contents of a file, better than 'cat' for reading longer files
+cp
+copy a file to a desired dir, use '-r' to copy dirs, '-i' to warn against poss. overwriting
+mv
+rename files, move files to desired dirs. '-i' protects from'-b' makes a backup in the file's current dir
+mkdir
+create new dirs, use '-p' to create subdirs
+rm
+remove (delete) files
+rmdir
+remove directories, can also use 'rm -r'
+find
+find files, must specify what dir you're searching in and what you're searching for (file, dir, ...)
+echo
+can print to STDOUT, can print to other files using '>' or append with '>>'
+cut
+can extract portions of text, '-c' to cut by chars, '-f' to cut by fields (TAB by default, '-d "X"' to declare custom delimiter "X")
+paste
+merge lines in a file, TAB is default delimiter, '-d' declares custom delimiter
+head
+displays beginning of a file, 10 lines by default, "-n X" to declare amount of lines displayed
+tail
+displays ending of a file, same behavior as 'head'
+sort
+sort lines of a file, alphebetically by default, '-r' to reverse sort, '-n' for numerical sort
+uniq
+will display one instance of each line, omitting repeat lines, '-c' provides a count of occurences, ONLY WORKS on adjacent repeating lines
+wc
+displays line count (-l), word count (-w), and byte count (-c) of a file
+'|'
+pipe, will pipe the output of the left command as input to the right command/program
+sudo
+superuser do, allows users to do things that require root/SU permission
+su
+substitute users/switch users, will give root access is no username specified
+permissions
+r/4: read, w/2:write, x/1: execute, s: set user ID, allows users to get owners permission
+chmod
+change permissions for files, add using +, remove using -
