@@ -4,9 +4,10 @@ use v5.28;
 use strict;
 use warnings;
 
+#using bash alias "alias index='/[YOUR FILE PATH]/linux_index.pl'"
 
 	sub read_index{
-		open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+		open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 		chomp (my @indexDOC = <INDEX>);
 
 		my %index = @indexDOC;
@@ -25,7 +26,7 @@ use warnings;
 	}
 	
 	sub search_index{
-		open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+		open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 		chomp (my @indexDOC = <INDEX>);
 
 		my %index = @indexDOC;
@@ -48,7 +49,7 @@ use warnings;
 	
 	
 	sub update_index{
-		my $index = '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+		my $index = '/[YOUR FILE PATH]/indexDOC.txt';
 		open INDEX, ">> $index";
 		print "Enter your term\n";
 		my $a = <STDIN>;
