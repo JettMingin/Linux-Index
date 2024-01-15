@@ -6,6 +6,7 @@ use warnings;
 
 open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 chomp (my @indexDOC = <INDEX>);
+close (INDEX);
 my %index = @indexDOC;
 my @terms = sort (keys %index);
 
