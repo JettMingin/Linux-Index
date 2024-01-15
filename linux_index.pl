@@ -7,7 +7,7 @@ use warnings;
 #using bash alias "alias index='/[YOUR FILE PATH]/linux_index.pl'"
 
 sub read_index{
-	open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+	open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 	chomp (my @indexDOC = <INDEX>);
 	
 	my %index = @indexDOC;
@@ -26,7 +26,7 @@ sub read_index{
 }
 	
 sub search_index{
-	open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+	open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 	chomp (my @indexDOC = <INDEX>);
 	
 	my %index = @indexDOC;
@@ -48,7 +48,7 @@ sub search_index{
 	
 	
 sub update_index{
-	my $index = '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+	my $index = '/[YOUR FILE PATH]/indexDOC.txt';
 	open INDEX, ">> $index";
 	print "Enter your term\n";
 	my $a = <STDIN>;
@@ -60,7 +60,7 @@ sub update_index{
 }
 	
 sub delete_index{
-	open INDEX, '/home/jettmingin/bash_learning/nottxt/indexDOC.txt';
+	open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
 	chomp (my @indexDOC = <INDEX>);
 	close INDEX;
 		
@@ -84,10 +84,10 @@ sub delete_index{
 			print "Are you sure you wish to delete this term? (y/n): ";
 			my $delete_check = <STDIN>;
 			if ($delete_check =~ /\Ay\Z/){
-				open (INDEX, "</home/jettmingin/bash_learning/nottxt/indexDOC.txt");
+				open (INDEX, "</[YOUR FILE PATH]/indexDOC.txt");
 				my @LINES = <INDEX>;
 				close (INDEX);
-				open (INDEX, ">/home/jettmingin/bash_learning/nottxt/indexDOC.txt");
+				open (INDEX, ">/[YOUR FILE PATH]/indexDOC.txt");
 				foreach my $LINE (@LINES){
 					print INDEX $LINE unless ($LINE =~ m/\A($TERM)|($DESCRIPTION)\Z/);
 				}
@@ -109,9 +109,7 @@ sub delete_index{
 
 
 
-	if($ARGV[0] =~ /c/i){
-		print 'success';
-	}elsif($ARGV[0] =~ /r/i){
+	if($ARGV[0] =~ /r/i){
 		read_index;
 	}elsif($ARGV[0] =~ /u/i){
 		update_index;
