@@ -2,11 +2,11 @@
 
 use v5.28;
 use strict;
-use warnings;
 
-open INDEX, '/[YOUR FILE PATH]/indexDOC.txt';
+open INDEX, '/[YOUR FILE PATH]/indexDOC.txt'; #Declare your file path to the indexDOC here
 chomp (my @indexDOC = <INDEX>);
 close (INDEX);
+
 my %index = @indexDOC;
 my @terms = sort (keys %index);
 
