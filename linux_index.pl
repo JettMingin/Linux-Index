@@ -5,7 +5,9 @@ use strict;
 
 #using bash alias "alias index='/[YOUR FILE PATH]/linux_index.pl'"
 
-my $indexDOC = '/[YOUR FILE PATH]/indexDOC.txt'; #Declare your file path to the indexDOC here
+use FindBin qw($Bin); 
+my $indexDOC = $Bin;	#finding the programs full filepath
+$indexDOC .= '/indexDOC.txt';	#works as long as the indexDOC is in the same dir as the program
 
 sub read_index{
 	open INDEX, "$_[0]";
