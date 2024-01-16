@@ -3,7 +3,11 @@
 use v5.28;
 use strict;
 
-open INDEX, '/[YOUR FILE PATH]/indexDOC.txt'; #Declare your file path to the indexDOC here
+use FindBin qw($Bin); 
+my $FILE = $Bin;	#finding the programs full filepath
+$FILE .= '/indexDOC.txt';	#works as long as the indexDOC is in the same dir as the program
+
+open INDEX, "$FILE";
 chomp (my @indexDOC = <INDEX>);
 close (INDEX);
 
